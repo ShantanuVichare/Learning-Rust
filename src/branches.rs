@@ -28,6 +28,8 @@ pub fn run() {
         counter += 1;
 
         if counter == 10 {
+            // This line is equivalent of (break counter*2);
+            // 'break expr;' Statement will return a value of 'expr' Expression 
             break counter * 2;
         }
     };
