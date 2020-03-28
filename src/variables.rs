@@ -10,7 +10,10 @@ pub fn run() {
     println!("{},{}", x,tup.2);
 
     // Array
+    // All below initializations are equivalent
+    let mut a = [3,3,3,3];
+    let mut a = [3;4];
     let mut a:[i32;4] = [3;4];
     a[0] = 5;
-    println!("{}",a[0]);
+    println!("a = [{},{},{},{}]",a[0],a[1],a[2],a[3]);
 }
