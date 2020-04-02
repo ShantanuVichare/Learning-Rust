@@ -35,13 +35,17 @@ pub fn run(){
     println!("String object Address: {:?}", s1.as_ptr());
     println!("String slice Address: {:?}", s2.as_ptr());
 
+    // You can pass variables by Assignment or by passing to Functions
+    // Heap allocated variables(s1 below) are Dropped when passed and hence not implicitly Copied
+    // Stack variables(s2 below) are not dropped when passed instead they are implicitly Copied 
     
-    // Heap allocated variables(s1 below) are Dropped and hence not implicitly Copied
-    // Stack variables(s2 below) are implicitly Copied 
-    // Note for below: Assignment is similar to passing to Function
+    // Assignment types:
+    // "let a = b;" OR "b;" => Both statements are valid assignments
+
     let _ = s2; // Assignment to none - Shallow copies to none // Similar to "s2;"
     // OR some_function(s2); // Passes to function - Shallow copies to function
         /******* Here s2 is still valid *******/
+
     s1; // Assignment to none - Moves Object/Passes Ownership to none and thus s1 becomes invalid
     // OR some_function(s1); // Assignment to function - Moves Object/Passes Ownership to function and thus s1 becomes invalid
         /******* Now s2 is invalid *******/
