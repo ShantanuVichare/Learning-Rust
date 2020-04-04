@@ -10,12 +10,18 @@
 // mod variables;
 // mod functions;
 // mod branches;
-mod slices;
+// mod slices;
+// mod structs;
+// mod rectangles;
+mod enums;
 
 fn main() {
     // guessing_game::run();
     // variables::run();
     // functions::run();
     // branches::run();
-    slices::run();
+    // slices::run();
+    // structs::run();
+    // rectangles::run();
+    enums::run();
 }
