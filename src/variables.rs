@@ -16,4 +16,12 @@ pub fn run() {
     let mut a:[i32;4] = [3;4];
     a[0] = 5;
     println!("a = [{},{},{},{}]",a[0],a[1],a[2],a[3]);
+
+    println!("Type of a: {}", type_of(a));
+
+}
+// Ignore below
+use std::any::type_name;
+fn type_of<T>(_: T) -> &'static str {
+    type_name::<T>()
 }
