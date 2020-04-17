@@ -7,8 +7,8 @@ fn type_of<T>(_: T) -> &'static str {
 pub fn run(){
 
     // Running code for each collection types
-    vectors::run();
-    strings::run();
+    // vectors::run();
+    // strings::run();
     hashmaps::run();
 }
 
@@ -76,6 +76,35 @@ mod vectors{
             SpreadsheetCell::Text(String::from("Boo")),
             SpreadsheetCell::Float(9.3)
         ];
+
+
+        // Advanced Iterators
+        let mut v1 = vec![
+            String::from("string 1"),
+            String::from("string 2"),
+            String::from("string 3"),
+        ];
+        for i in v1.iter() {
+            // i will be an Immutable borrow
+        }
+        for i in v1.iter_mut() {
+            // i will be a Mutable borrow
+        }
+        for i in v1.into_iter() {
+            // i will take ownership of the Values
+        } // v1 will have been moved and invalidated now
+        
+        
+        // Using extend to manipulate vectors
+        let mut v1 = vec![1,2,3];
+        let v2 = vec![4,5,6];
+        v1.extend(v2.iter()); // Extend will borrow v2 immutably
+        // v2 is valid
+        v1.extend(v2); // Extend will automatically call into_iter() effectively moving v2
+        // v2 is invalid
+
+        println!("v1: {:?}", v1);
+
     }
 }
 
@@ -207,5 +236,21 @@ mod hashmaps {
         // 'hello_ref' is a Mutable borrow of counts and hence cannot be borrowed (mutable/immutable) as long as 'hence_ref' is valid
         // println!("counts: {:?}", counts); // The print will attempt to borrow 'counts' immutably and hence violate ownership rules
         println!("hello_ref: {}", hello_ref); // This will ensure the lifetime of 'hello_ref' till this line
+
+
+        // User-defined data structures can be used as Keys by deriving Hash, Eq, PartialEq traits
+        #[derive(Hash, Eq, PartialEq, Debug)]
+        struct Person {
+            name: String,
+            age: usize,
+        }
+
+        let mut country_map: HashMap<Person,String> = HashMap::new();
+
+        country_map.insert(Person{name:"Adam".to_string(),age:25}, "USA".to_string());
+        country_map.insert(Person{name:"Ajay".to_string(),age:32}, "India".to_string());
+
+        println!("country_map: {:#?}", country_map);
+
     }
 }
