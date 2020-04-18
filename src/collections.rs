@@ -7,8 +7,8 @@ fn type_of<T>(_: T) -> &'static str {
 pub fn run(){
 
     // Running code for each collection types
-    // vectors::run();
-    // strings::run();
+    vectors::run();
+    strings::run();
     hashmaps::run();
 }
 
