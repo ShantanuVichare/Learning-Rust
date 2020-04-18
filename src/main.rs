@@ -14,7 +14,8 @@
 // mod structs;
 // mod rectangles;
 // mod enums;
-mod collections;
+// mod collections;
+mod errors;
 
 fn main() {
     // guessing_game::run();
@@ -25,5 +26,6 @@ fn main() {
     // structs::run();
     // rectangles::run();
     // enums::run();
-    collections::run();
+    // collections::run();
+    errors::run();
 }
