@@ -15,7 +15,8 @@
 // mod rectangles;
 // mod enums;
 // mod collections;
-mod errors;
+// mod errors;
+mod generics;
 
 fn main() {
     // guessing_game::run();
@@ -27,5 +28,6 @@ fn main() {
     // rectangles::run();
     // enums::run();
     // collections::run();
-    errors::run();
+    // errors::run();
+    generics::run();
 }
