@@ -10,8 +10,8 @@ fn type_of<T>(_: &T) -> &'static str {
 }
 
 pub fn run() {
-    // generics::run();
-    // traits::run();
+    generics::run();
+    traits::run();
     lifetimes::run();
 }
 
