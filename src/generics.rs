@@ -46,6 +46,10 @@ mod generics {
         }
     }
 
+    fn passed_type<T>() {
+        println!("{}", std::any::type_name::<T>());
+    }
+
     pub fn run() {
         println!("--Generics--");
         // Generic definitions take type argument
@@ -59,6 +63,11 @@ mod generics {
 
         println!("Type of integer_pt: {}", integer_pt.has_type());
         println!("Type of float_pt: {}", float_pt2.has_type());
+
+        println!("Testing Explicit type annotations of Functions..");
+        passed_type::<i32>();
+        passed_type::<f64>();
+        passed_type::<String>();
     }
 }
 
