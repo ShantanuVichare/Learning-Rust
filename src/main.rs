@@ -16,7 +16,9 @@
 // mod enums;
 // mod collections;
 // mod errors;
-mod generics;
+// mod generics;
+// mod closures;
+// mod iterators;
 
 fn main() {
     // guessing_game::run();
@@ -29,5 +31,7 @@ fn main() {
     // enums::run();
     // collections::run();
     // errors::run();
-    generics::run();
+    // generics::run();
+    // closures::run();
+    // iterators::run();
 }
