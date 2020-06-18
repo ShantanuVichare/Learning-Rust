@@ -19,6 +19,7 @@
 // mod generics;
 // mod closures;
 // mod iterators;
+mod sm_pointers;
 
 fn main() {
     // guessing_game::run();
@@ -34,4 +35,5 @@ fn main() {
     // generics::run();
     // closures::run();
     // iterators::run();
+    sm_pointers::run();
 }
